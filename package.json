@@ -2,13 +2,14 @@
   "name": "vamosacodearplanetas",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ignore-path .gitignore . --ext .js,.ts,.jsx,.tsx",
-    "lint:fix": "npm run lint -- --fix"
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx}'",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -16,6 +17,8 @@
     "wouter": "2.8.0-alpha.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "5.33.1",
@@ -28,6 +31,7 @@
     "eslint-plugin-n": "15.2.4",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "7.30.1",
+    "husky": "8.0.0",
     "lint-staged": "13.0.3",
     "postcss": "8.4.16",
     "prettier": "2.7.1",
@@ -36,6 +40,10 @@
     "vite": "3.0.7"
   },
   "lint-staged": {
-    "*.(js|jsx|ts|tsx)": "npm run lint:fix"
+    "*.(js|jsx|ts|tsx)": [
+      "npm run lint:fix",
+      "npm run format",
+      "git add ."
+    ]
   }
 }

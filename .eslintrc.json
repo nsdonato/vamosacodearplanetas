@@ -16,7 +16,8 @@
     "dist/",
     "vscode/",
     "src/vite-env.d.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "commitlint.config.js"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
