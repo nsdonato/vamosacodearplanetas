@@ -1,93 +1,97 @@
-import { Link, Route } from "wouter";
+import { Link, Route, Switch } from "wouter";
 
 export const AppRouter = () => (
   <>
-    <Route path="/">
-      <Link href="/planets/jupiter">
-        <a className="link">Ir a Jupiter</a>
-      </Link>
+    {/*TODO Hacer un componente navbar 
+    NAVBAR CASERO */}
+
+    <ul>
+      <li>
+        <Link href="/planets/jupiter">
+          <a  className="link">
+            Jupiter
+          </a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/planets/jupiter">
+          <a  className="link">
+            Venus
+          </a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/planets/earth">
+          <a  className="link">
+            Earth
+          </a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/planets/mercury">
+          <a  className="link">
+            Mercury
+          </a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/planets/mars">
+          <a  className="link">
+            Mars
+          </a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/planets/uranus">
+          <a  className="link">
+            Uranus
+          </a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/planets/neptune">
+          <a  className="link">
+            Neptune
+          </a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/planets/saturn">
+          <a  className="link">
+            Saturn
+          </a>
+        </Link>
+      </li>
+    </ul>
+
+    
+    <Route path="/planets/jupiter">
+      <h1>Hola estas en Jupiter bienvenido</h1>
+    </Route>
+    <Route path="/planets/earth">
+      <h1>Hola estas en la tierra bienvenido</h1>
+
+    </Route>
+    <Route path="/planets/mercury">
+      <h1>Hola estas en Mercurio bienvenido</h1>
+
+    </Route>
+    <Route path="/planets/mars">
+      <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsam?</h1>
+
+    </Route>
+    <Route path="/planets/saturn">
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsam?</h1>
+
+    </Route>
+    <Route path="/planets/uranus">
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsam?</h1>
+
+    </Route>
+    <Route path="/planets/neptune">
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsam?</h1>
+
     </Route>
     <Route path="/about">About Us</Route>
-    <Route path="/planets/:name">
-      {(params) => (
-        <>
-          <h1>Hola, estas en {params.name}!</h1>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="450"
-            height="450"
-          >
-            <defs>
-              <circle id="a" cx="225" cy="225" r="225" />
-              <circle id="c" cx="225" cy="225" r="225" />
-              <circle id="e" cx="225" cy="225" r="225" />
-              <circle id="g" cx="225" cy="225" r="225" />
-              <circle id="i" cx="225" cy="225" r="225" />
-            </defs>
-            <g fill="none" fill-rule="evenodd">
-              <circle
-                cx="225"
-                cy="225"
-                r="225"
-                fill="#497EFA"
-                fill-rule="nonzero"
-              />
-              <mask id="b" fill="#fff">
-                <use xlinkHref="#a" />
-              </mask>
-              <path
-                fill="#356CEE"
-                fill-rule="nonzero"
-                d="M317.177 262c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm-287 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm539 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-166c-6.627 0-12-5.373-12-12s5.373-12 12-12h166zm-334-96c6.628 0 12 5.373 12 12s-5.372 12-12 12h-78v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h160c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h49c6.628 0 12-5.373 12-12s-5.372-12-12-12h-30c-6.627 0-12-5.373-12-12s5.373-12 12-12h156zm168 36c0-6.627-5.372-12-12-12h-84c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.628 0 12 5.373 12 12s-5.372 12-12 12h-24v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h200c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h9c6.628 0 12-5.373 12-12zm-388-36c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12h156zm662 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12h156z"
-                mask="url(#b)"
-              />
-              <mask id="d" fill="#fff">
-                <use xlinkHref="#c" />
-              </mask>
-              <path
-                fill="#356CEE"
-                fill-rule="nonzero"
-                d="M317.177 118c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm-287 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm539 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-166c-6.627 0-12-5.373-12-12s5.373-12 12-12h166zm-334-96c6.628 0 12 5.373 12 12s-5.372 12-12 12h-78v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99V70h160c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h49c6.628 0 12-5.373 12-12s-5.372-12-12-12h-30c-6.627 0-12-5.373-12-12s5.373-12 12-12h156zm168 36c0-6.627-5.372-12-12-12h-84c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.628 0 12 5.373 12 12s-5.372 12-12 12h-24v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99V70h200c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h9c6.628 0 12-5.373 12-12zm-388-36c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12h156zm662 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12h156z"
-                mask="url(#d)"
-                opacity=".4"
-              />
-              <mask id="f" fill="#fff">
-                <use xlinkHref="#e" />
-              </mask>
-              <path
-                fill="#356CEE"
-                fill-rule="nonzero"
-                d="M317.177 430c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm-287 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-73c-6.627 0-12-5.373-12-12s5.373-12 12-12h73zm539 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-166c-6.627 0-12-5.373-12-12s5.373-12 12-12h166zm-334-96c6.628 0 12 5.373 12 12s-5.372 12-12 12h-78v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h160c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h49c6.628 0 12-5.373 12-12s-5.372-12-12-12h-30c-6.627 0-12-5.373-12-12s5.373-12 12-12h156zm168 36c0-6.627-5.372-12-12-12h-84c-6.627 0-12-5.373-12-12s5.373-12 12-12h156c6.628 0 12 5.373 12 12s-5.372 12-12 12h-24v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h200c6.628 0 12 5.373 12 12s-5.372 12-12 12h-257c-6.627 0-12-5.373-12-12s5.373-12 12-12h9c6.628 0 12-5.373 12-12zm-388-36c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12h156zm662 0c6.628 0 12 5.373 12 12s-5.372 12-12 12h-156c-6.627 0-12-5.373-12-12s5.373-12 12-12h156z"
-                mask="url(#f)"
-                opacity=".4"
-              />
-              <mask id="h" fill="#fff">
-                <use xlinkHref="#g" />
-              </mask>
-              <path
-                fill="#2255CA"
-                fill-rule="nonzero"
-                d="M148.177 274c0-6.627-5.372-12-12-12h-19c-6.627 0-12-5.373-12-12s5.373-12 12-12h79c6.628 0 12 5.373 12 12s-5.372 12-12 12h-3v.01c-6.395.262-11.5 5.53-11.5 11.99s5.105 11.728 11.5 11.99v.01h3c6.628 0 12 5.373 12 12s-5.372 12-12 12h-61c-6.627 0-12-5.373-12-12s5.373-12 12-12h1c6.628 0 12-5.373 12-12z"
-                mask="url(#h)"
-              />
-              <mask id="j" fill="#fff">
-                <use xlinkHref="#i" />
-              </mask>
-              <path
-                fill="#000"
-                fill-rule="nonzero"
-                mask="url(#j)"
-                opacity=".078"
-                d="M225 11h215.354v428H225z"
-              />
-            </g>
-          </svg>
-          <Link href="/">
-            <a className="link">Volver</a>
-          </Link>
-        </>
-      )}
-    </Route>
   </>
 );

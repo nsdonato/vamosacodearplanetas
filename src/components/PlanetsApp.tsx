@@ -4,9 +4,7 @@ import { Link } from 'wouter'
 export const PlanetsApp = () => {
   return (
     <>
-    
-    <AppRouter/>
-    
+     <AppRouter/>
     </>
   )
 }
