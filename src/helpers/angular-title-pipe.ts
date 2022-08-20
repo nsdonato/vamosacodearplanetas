@@ -1,6 +1,7 @@
-export const angularTitlePipe= (stringVictima: string):string  => {
-    let firstChar = stringVictima[0]
-    firstChar = firstChar.toUpperCase()
+// En honor al pipe del mejor js framework
+export const angularTitlePipe = (param: string): string => {
+  let firstChar = param[0];
+  firstChar = firstChar.toUpperCase();
 
-    return `${firstChar}${stringVictima.substring(1)}`
-}
+  return `${firstChar}${param.substring(1)}`;
+};

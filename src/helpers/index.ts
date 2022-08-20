@@ -1,1 +1,1 @@
-export * from './angular-title-pipe'
+export * from "./angular-title-pipe";

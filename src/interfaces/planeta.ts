@@ -1,3 +1,3 @@
 export interface MenuPlanetItem {
-    name: string
+  name: string;
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import { MenuPlanetItem } from "../interfaces/planeta";
 import { Link } from "wouter";
-import { angularTitlePipe } from '../helpers'
+import { angularTitlePipe } from "../helpers";
 
 export const MenuPlanets = () => {
-  const planetas: MenuPlanetItem[] = [
+  const planets: MenuPlanetItem[] = [
     { name: "mercury" },
     { name: "venus" },
     { name: "earth" },
@@ -15,16 +15,16 @@ export const MenuPlanets = () => {
     { name: "neptune" },
   ];
   return (
-    <>
-      <ul>
-        {planetas.map((p: MenuPlanetItem, i) => {
-          return (<li key={i}>
+    <ul>
+      {planets.map((p: MenuPlanetItem, i) => {
+        return (
+          <li key={i}>
             <Link href={`/planets/${p.name}`}>
               <a className="link">{angularTitlePipe(p.name)}</a>
             </Link>
-          </li>);
-        })}
-      </ul>
-    </>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
