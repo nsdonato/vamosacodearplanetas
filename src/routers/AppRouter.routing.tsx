@@ -1,11 +1,8 @@
-import { Link, Route, Switch } from "wouter";
+import { Route } from "wouter";
 import { MenuPlanets } from '../components/MenuPlanets';
 
 export const AppRouter = () => (
   <>
-    {/*TODO Hacer un componente navbar 
-    NAVBAR CASERO */}
-
     
     <MenuPlanets></MenuPlanets>
 
