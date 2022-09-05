@@ -40,7 +40,7 @@ npm run dev
 
 ## Ayuda
 
-Si tienes cualquier duda puedes preguntar en nuestro [Discord](https://discord.gg/nwGE46hycg)
+Si tienes cualquier duda puedes preguntar en nuestr[](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)o [Discord](https://discord.io/vamoacodear)
 
 ## Contribuyentes
 
