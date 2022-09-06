@@ -3,9 +3,11 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{tsx, jsx, js, ts}"],
   theme: {
     letterSpacing: {
-      2.6: "+2.6",
-      1.5: "-1.5",
-      1: "+1",
+      2.6: "2.6px",
+      1.5: "-1.5px",
+      1.05: "-1.05px",
+      1.36: "1.36px",
+      1: "1px",
     },
     lineHeight: {
       103: "103px",
@@ -15,6 +17,8 @@ module.exports = {
     fontSize: {
       80: "80px",
       40: "40px",
+      28: "28px",
+      15: "15px",
       11: "11px",
       12: "12px",
     },
@@ -23,14 +27,10 @@ module.exports = {
       medium: 500,
       bold: 700,
     },
-    screens: {
-      sm: "375px",
-      md: "768px",
-      xl: "1440px",
-    },
     colors: {
       white: "#ffffff",
       blue: "#2D68F0",
+      darkBlue: "#070724",
       gray: "#38384f",
       "gray-light": "#838391",
       teal: "#419EBB",
@@ -45,6 +45,18 @@ module.exports = {
       antonio: ["Antonio", "sans-serif"],
       spartan: ["League Spartan", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        stars: "url('/background-stars.svg')",
+      },
+      height: {
+        0.5: "2px",
+      },
+      screens: {
+        sm: "375px",
+        md: "768px",
+        xl: "1440px",
+      },
+    },
   },
 };

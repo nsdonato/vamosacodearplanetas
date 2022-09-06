@@ -1,8 +1,8 @@
-import "./App.css";
-import { PlanetsApp } from "./components/PlanetsApp";
+import "./index.css";
+import { AppRouter } from "./routers/AppRouter.routing";
 
 function App() {
-  return <PlanetsApp />;
+  return <AppRouter />;
 }
 
 export default App;
