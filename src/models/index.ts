@@ -1,4 +1,4 @@
-import { MenuPlanetItem } from "../interfaces";
+import { MenuPlanetItem } from "PlanetTypes";
 
 export const planets: MenuPlanetItem[] = [
   { name: "mercury" },

@@ -1,5 +1,5 @@
 interface LayoutProps {
-  planetName: string;
+  planetName?: string;
 }
 
 // TODO: Layout components

@@ -8,5 +8,9 @@ export const AppRouter = () => (
     <Route path="/planets/:planetName">
       {(params) => <Layout planetName={params.planetName} />}
     </Route>
+    <Route path="/">
+      {" "}
+      <Layout />
+    </Route>
   </>
 );
