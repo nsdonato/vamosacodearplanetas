@@ -4,7 +4,7 @@ import { PlanetContext } from "../context/PlanetContext";
 export function usePlanet() {
   const context = useContext(PlanetContext);
 
-  if (context === undefined) {
+  if (!context) {
     throw new Error("usePlanet must be used within a PlanetProvider");
   }
   return context;
