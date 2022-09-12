@@ -1,4 +1,4 @@
-import { Planet } from "PlanetTypes";
+import { Planet } from "@planet/types";
 import { createContext } from "react";
 
 interface PlanetContextProps {

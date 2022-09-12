@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { PlanetContext } from "./PlanetContext";
-import { Planet } from "PlanetTypes";
+import { Planet } from "@planet/types";
 // TODO: remover este import cuando el servicio fetch este implementado
 import data from "../../starter-code/data.json";
 

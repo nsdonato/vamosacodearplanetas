@@ -1,4 +1,4 @@
-declare module "PlanetTypes" {
+declare module "@planet/components" {
   export interface MenuPlanetItem {
     name: string;
   }

@@ -1,4 +1,4 @@
-declare module "PlanetTypes" {
+declare module "@planet/types" {
   export interface ContentPlanet {
     content: string;
     source: string;
