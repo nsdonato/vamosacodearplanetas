@@ -1,5 +1,5 @@
 import { planets } from "../models";
-import { ClassProps, MenuPlanetItem } from "PlanetTypes";
+import { ClassProps, MenuPlanetItem } from "@planet/components";
 import { Link } from "wouter";
 
 type NavHeaderProps = ClassProps;
