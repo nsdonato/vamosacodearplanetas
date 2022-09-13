@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Link } from "wouter";
 import { Button, Img, Line } from "../components";
-import { ClassProps, MenuPlanetItem } from "PlanetTypes";
+import { ClassProps, MenuPlanetItem } from "@planet/components";
 import { planets } from "../models";
 
 type NavButtonsProps = ClassProps;

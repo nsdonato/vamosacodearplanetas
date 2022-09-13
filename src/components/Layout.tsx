@@ -1,16 +1,17 @@
 import { PlanetMain } from "../components/PlanetMain";
 
-interface LayoutProps {
-  planetName?: string;
-}
+import { usePlanet } from "../hooks";
 
 // TODO: Layout components
-export const Layout = ({ planetName = "jupiter" }: LayoutProps) => {
+export const Layout = () => {
+  const { planet } = usePlanet();
   return (
     <main className="h-screen flex justify-center items-center">
-      <p className="text-white">
-        <PlanetMain planet={planetName} />
-      </p>
+      {planet && (
+        <p className="text-white">
+          <PlanetMain planet={planet.name} />
+        </p>
+      )}
     </main>
   );
 };
