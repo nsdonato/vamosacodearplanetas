@@ -1,5 +1,3 @@
-import React from "react";
-
 interface planetInfoProps {
   title?: string;
   info?: string;

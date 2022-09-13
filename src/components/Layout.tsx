@@ -10,7 +10,6 @@ export const Layout = ({ planetName = "jupiter" }: LayoutProps) => {
     <main className="h-screen flex justify-center items-center">
       <p className="text-white">
         <PlanetMain planet={planetName} />
-        Acá va a haber un hermoso layout del planeta: {planetName}
       </p>
     </main>
   );
