@@ -1,6 +1,5 @@
 import { Route, useRoute } from "wouter";
 import { Layout } from "../components/Layout";
-import { MenuPlanets } from "../components/MenuPlanets";
 import { PlanetProvider } from "../context/PlanetProvider";
 
 export const AppRouter = () => {
@@ -9,7 +8,6 @@ export const AppRouter = () => {
 
   return (
     <>
-      <MenuPlanets selectedPlanet={params?.planetName} />
       <Route path="/planets/:planetName">
         <PlanetProvider planetName={params?.planetName}>
           <Layout />
