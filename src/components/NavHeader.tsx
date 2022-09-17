@@ -21,7 +21,7 @@ export const NavHeader = ({ className = "" }: NavHeaderProps) => {
                   <Link
                     href={`/planets/${p.name}`}
                     className={`${
-                      p.name === planet.name
+                      p.name === planet.name.toLowerCase()
                         ? "border-t-4 border-orange-dark"
                         : ""
                     } p-4 items-center justify-between uppercase text-white font-spartan font-bold text-11 leading-25 tracking-1.36`}
