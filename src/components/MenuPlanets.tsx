@@ -3,7 +3,7 @@ import { NavHeader } from "./NavHeader";
 import { Line } from "./Line";
 
 interface MenuPlanetsProps {
-  selectedPlanet: string | undefined;
+  selectedPlanet?: string;
 }
 
 export const MenuPlanets = ({ selectedPlanet }: MenuPlanetsProps) => (

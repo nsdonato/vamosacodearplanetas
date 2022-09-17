@@ -3,7 +3,7 @@ import { ClassProps, MenuPlanetItem } from "@planet/components";
 import { Link } from "wouter";
 
 interface NavHeaderProps extends ClassProps {
-  selectedPlanet: string | undefined;
+  selectedPlanet?: string;
 }
 
 export const NavHeader = ({
