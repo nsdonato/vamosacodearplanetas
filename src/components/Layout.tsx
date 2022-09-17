@@ -1,5 +1,4 @@
 import { usePlanet } from "../hooks";
-import PlanetOptionList from "./PlanetOptionList";
 
 // TODO: Layout components
 export const Layout = () => {
@@ -11,9 +10,6 @@ export const Layout = () => {
           <p className="text-white">
             Acá va a haber un hermoso layout del planeta: {planet.name}
           </p>
-          <PlanetOptionList
-            options={["overview", "internal structure", "surface geology"]}
-          />
         </>
       )}
     </main>
