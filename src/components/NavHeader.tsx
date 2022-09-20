@@ -5,8 +5,23 @@ import { usePlanet } from "../hooks";
 
 type NavHeaderProps = ClassProps;
 
+const VARIANTS = {
+  mercury: "border-teal",
+  venus: "border-orange-light",
+  earth: "border-violet",
+  mars: "border-red-light",
+  jupiter: "border-red",
+  saturn: "border-orange-dark",
+  uranus: "border-green-light",
+  neptune: "border-blue",
+};
+
 export const NavHeader = ({ className = "" }: NavHeaderProps) => {
   const { planet } = usePlanet();
+
+  function getPlanetColor(planet: any) {
+    return VARIANTS[planet as keyof typeof VARIANTS];
+  }
 
   return (
     <>
@@ -20,7 +35,7 @@ export const NavHeader = ({ className = "" }: NavHeaderProps) => {
                     href={`/planets/${p.name}`}
                     className={`${
                       p.name === planet.name.toLowerCase()
-                        ? "border-t-4 border-orange-dark"
+                        ? `border-t-4 ${getPlanetColor(p.name)}`
                         : ""
                     } p-4 items-center justify-between uppercase text-white font-spartan font-bold text-11 leading-25 tracking-1.36`}
                   >
