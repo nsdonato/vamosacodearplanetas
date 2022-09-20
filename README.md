@@ -66,6 +66,10 @@ npm run dev
 Si tienes cualquier duda puedes preguntar en nuestro [Discord](https://discord.io/vamoacodear) canal #vamosacodearplanetas
 
 
+# Pull Request
+
+
+`Por favor utilizar el template de Pull Request para poder darle al code reviewer un mejor panorama de lo que va a revisar, gracias.`
 
 # Colaboradores
 
