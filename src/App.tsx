@@ -1,8 +1,24 @@
+import { useEffect } from "react";
+import { useLocation, useRoute } from "wouter";
+import { PlanetProvider } from "./context/PlanetProvider";
 import "./index.css";
 import { AppRouter } from "./routers/AppRouter.routing";
 
 function App() {
-  return <AppRouter />;
+  const [match, params] = useRoute("/planets/:planetName");
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [location, setLocation] = useLocation();
+  useEffect(() => {
+    if (!match) {
+      setLocation("/planets/jupiter");
+    }
+  }, []);
+  return (
+    <PlanetProvider planetName={params?.planetName}>
+      <AppRouter />
+    </PlanetProvider>
+  );
 }
 
 export default App;
