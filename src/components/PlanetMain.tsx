@@ -1,5 +1,6 @@
 import { PlanetImage } from "./PlanetImage";
 import { PlanetInfo } from "./PlanetInfo";
+import { PlanetCardInfo } from "./PlanetCardInfo";
 import { Planet } from "@planet/types";
 
 interface planetProps {
@@ -11,7 +12,7 @@ export const PlanetMain = ({ planet }: planetProps) => {
     <section className="flex justify-around mx-auto my-20">
       <PlanetImage img={"img"} imgAlt={"imgAlt"} />
       <PlanetInfo />
-      {/* <PlanetCardInfo /> */}
+      <PlanetCardInfo />
     </section>
   );
 };
