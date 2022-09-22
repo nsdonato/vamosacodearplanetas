@@ -1,5 +1,6 @@
 import { MenuPlanets } from ".";
 import { usePlanet } from "../hooks";
+import { PlanetMain } from "./PlanetMain";
 
 // TODO: Layout components
 export const Layout = () => {
@@ -7,13 +8,7 @@ export const Layout = () => {
   return (
     <>
       <MenuPlanets />
-      <main className="h-screen flex justify-center items-center">
-        {planet && (
-          <p className="text-white">
-            Acá va a haber un hermoso layout del planeta: {planet.name}
-          </p>
-        )}
-      </main>
+      {planet && <PlanetMain planet={planet} />}
     </>
   );
 };
