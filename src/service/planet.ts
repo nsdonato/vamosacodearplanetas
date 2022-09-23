@@ -15,12 +15,7 @@ function getErrorMessage(error: unknown) {
 export const ServicePlanets = {
   get: async function (name: string): Promise<Response> {
     try {
-      const response = await fetch(`${URL}/${name}`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
+      const response = await fetch(`${URL}/${name}`);
       const planet: Planet = await response.json();
       return { planet };
     } catch (e) {
