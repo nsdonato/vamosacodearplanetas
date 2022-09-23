@@ -7,20 +7,24 @@ interface Response {
   error?: string;
 }
 
+function getErrorMessage(error: unknown) {
+  if (error instanceof Error) return error.message;
+  return String(error);
+}
+
 export const ServicePlanets = {
   get: async function (name: string): Promise<Response> {
-    const response = await fetch(`${URL}/${name}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
     try {
+      const response = await fetch(`${URL}/${name}`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
       const planet: Planet = await response.json();
       return { planet };
     } catch (e) {
-      const error = "not found";
-      return { error };
+      return { error: getErrorMessage(e) };
     }
   },
 };
