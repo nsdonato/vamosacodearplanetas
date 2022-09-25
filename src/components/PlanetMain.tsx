@@ -1,17 +1,19 @@
 import { PlanetImage } from "./PlanetImage";
 import { PlanetInfo } from "./PlanetInfo";
-import { PlanetCardInfo } from "./PlanetCardInfo";
+import { Planet } from "@planet/types";
 
 interface planetProps {
-  planet?: string;
+  planet?: Planet;
 }
 
 export const PlanetMain = ({ planet }: planetProps) => {
   return (
     <>
-      <PlanetImage img={"img"} imgAlt={"imgAlt"} />
-      <PlanetInfo title={"title"} info={"info"} link={"link"} />
-      <PlanetCardInfo />
+      <section className="flex justify-end m-32">
+        <PlanetImage img={"img"} imgAlt={"imgAlt"} />
+        <PlanetInfo />
+        {/* <PlanetCardInfo /> */}
+      </section>
     </>
   );
 };
