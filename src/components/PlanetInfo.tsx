@@ -6,17 +6,18 @@ export const PlanetInfo = () => {
   const { content, source } = planet?.overview;
 
   return (
-    <section className="flex flex-col gap-2 w-[278px] text-white">
-      <h1 className="font-antonio text-80 uppercase">{name}</h1>
-      <p className="font-spartan text-15 ">{content}</p>
-      <p className="flex flex-col justify-items-stretch">
-        <span className="font-spartan text-15 text-gray-light">
-          Source :
-          <a className="p-2 underline" href={source}>
-            Wikipedia <img src="../icon-source.svg"></img>
-          </a>
-        </span>
-      </p>
+    <section className="flex flex-col p-2 gap-3 w-[310px]">
+      <h1 className="font-antonio text-80 uppercase text-white">{name}</h1>
+      <p className="font-spartan text-15 text-gray-light">{content}</p>
+      <span className="inline-flex font-spartan text-15 gap-1 text-gray-light">
+        Source :
+        <a
+          className="flex items-strech gap-2 underline font-bold text-gray-light"
+          href={source}
+        >
+          Wikipedia<img className="self-center" src="../icon-source.svg"></img>
+        </a>
+      </span>
     </section>
   );
 };
