@@ -9,9 +9,11 @@ interface planetProps {
 
 export const PlanetMain = ({ planet }: planetProps) => {
   return (
-    <section className="flex justify-around mx-auto my-20">
-      <PlanetImage img={"img"} imgAlt={"imgAlt"} />
-      <PlanetInfo />
+    <section className="grid grid-row-2">
+      <div className="inline-flex justify-around">
+        <PlanetImage img={"img"} imgAlt={"imgAlt"} />
+        <PlanetInfo />
+      </div>
       <PlanetCardInfo />
     </section>
   );
