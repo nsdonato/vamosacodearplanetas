@@ -8,12 +8,10 @@ interface planetProps {
 
 export const PlanetMain = ({ planet }: planetProps) => {
   return (
-    <>
-      <section className="flex justify-around mx-auto my-20">
-        <PlanetImage img={"img"} imgAlt={"imgAlt"} />
-        <PlanetInfo />
-        {/* <PlanetCardInfo /> */}
-      </section>
-    </>
+    <section className="flex justify-around mx-auto my-20">
+      <PlanetImage img={"img"} imgAlt={"imgAlt"} />
+      <PlanetInfo />
+      {/* <PlanetCardInfo /> */}
+    </section>
   );
 };
