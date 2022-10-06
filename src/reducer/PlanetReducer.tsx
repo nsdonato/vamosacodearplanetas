@@ -1,3 +1,9 @@
+import {
+  PlanetActionHandle,
+  PlanetActionProps,
+  PlanetHandlers,
+  PlanetContextProps,
+} from "@planet/context";
 import { PlanetActions } from "../actions/PlanetActions";
 
 const initialState = {
@@ -7,22 +13,47 @@ const initialState = {
   errorMessage: "",
 };
 
-const PlanetReducer = (state, actions) => {
-  switch (actions.type) {
-    case PlanetActions.LOAD_PLANET:
-      return { ...state, isLoad: true };
-    case PlanetActions.LOAD_PLANET_SUCCESS:
-      return { ...state, isLoad: false, planet: actions.payload };
-    case PlanetActions.LOAD_PLANET_ERROR:
-      return {
-        ...state,
-        isLoad: false,
-        isError: true,
-        errorMessage: actions.payload,
-      };
-    default:
-      return { ...state };
-  }
+const handlers: PlanetHandlers = {};
+
+const handleLoadPlanet: PlanetActionHandle = (state, action) => {
+  return {
+    ...state,
+    isLoad: true,
+  };
+};
+const handlePlanetSuccess: PlanetActionHandle = (state, action) => {
+  return {
+    ...state,
+    isLoad: false,
+    isError: false,
+    planet: action.payload,
+  };
 };
 
-export { PlanetReducer, initialState };
+const handlePlanetError: PlanetActionHandle = (state, action) => {
+  return {
+    ...state,
+    isLoad: false,
+    isError: true,
+    planet: null,
+  };
+};
+
+handlers[PlanetActions.LOAD_PLANET] = handleLoadPlanet;
+handlers[PlanetActions.LOAD_PLANET_SUCCESS] = handlePlanetSuccess;
+handlers[PlanetActions.LOAD_PLANET_ERROR] = handlePlanetError;
+
+function reducerFactory(
+  initialState: PlanetContextProps,
+  handlers: PlanetHandlers
+) {
+  return function (state = initialState, action: PlanetActionProps) {
+    const handler = handlers[action.type];
+    if (handler) {
+      return handler(state, action);
+    }
+    return state;
+  };
+}
+const PlanetReducer = reducerFactory(initialState, handlers);
+export { initialState, PlanetReducer };

@@ -1,12 +1,5 @@
-import { Planet } from "@planet/types";
+import { PlanetContextProps } from "@planet/context";
 import { createContext } from "react";
 import { initialState } from "../reducer/PlanetReducer";
-
-interface PlanetContextProps {
-  planet: Planet | undefined;
-  isLoad: boolean;
-  isError: boolean;
-  errorMessage: string;
-}
 
 export const PlanetContext = createContext<PlanetContextProps>(initialState);
