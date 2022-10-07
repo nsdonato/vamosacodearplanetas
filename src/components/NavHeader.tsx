@@ -37,7 +37,7 @@ export const NavHeader = ({ className = "" }: NavHeaderProps) => {
                       p.name === planet.name.toLowerCase()
                         ? `border-t-4 ${getPlanetColor(p.name)}`
                         : ""
-                    } p-4 items-center justify-between uppercase text-white font-spartan font-bold text-11 leading-25 tracking-1.36`}
+                    }  lg:pt-10  lg:px-4 p-5 items-center justify-between uppercase text-white font-spartan font-bold text-11 leading-25 tracking-1.36`}
                   >
                     {p.name}
                   </Link>

@@ -4,7 +4,7 @@ import { Line } from "./Line";
 
 export const MenuPlanets = () => (
   <section className="">
-    <header className="flex lg:flex-row md:flex-col md:items-center items-baseline justify-between p-4">
+    <header className="flex lg:flex-row md:flex-col md:items-center items-baseline justify-between md:py-1 px-4">
       <h1 className="font-antonio text-white text-28 font-medium uppercase tracking-1.05 md:py-6">
         the planets
       </h1>
