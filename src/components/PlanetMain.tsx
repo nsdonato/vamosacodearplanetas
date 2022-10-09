@@ -9,9 +9,11 @@ interface planetProps {
 
 export const PlanetMain = ({ planet }: planetProps) => {
   return (
-    <section className="text-white">
-      <PlanetImage img={"img"} imgAlt={"imgAlt"} />
-      <PlanetInfo title={"title"} info={"info"} link={"link"} />
+    <section className="grid grid-row-2">
+      <div className="inline-flex justify-around">
+        <PlanetImage img={"img"} imgAlt={"imgAlt"} />
+        <PlanetInfo />
+      </div>
       <PlanetCardInfo />
     </section>
   );
