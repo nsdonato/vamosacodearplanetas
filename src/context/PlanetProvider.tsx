@@ -1,15 +1,10 @@
 import { useEffect, useReducer } from "react";
 import { PlanetContext } from "./PlanetContext";
-
-// TODO: remover este import cuando el servicio fetch este implementado
-import data from "../../starter-code/data.json";
-import { initialState, PlanetReducer } from "../reducer/PlanetReducer";
+import { PlanetReducer, initialState } from "../reducer/PlanetReducer";
 import { PlanetActions } from "../actions/PlanetActions";
+import { ServicePlanets } from "../service/planet";
+import { PlanetProviderProps } from "@planet/context";
 
-interface PlanetProviderProps {
-  children: React.ReactNode;
-  planetName?: string;
-}
 const PlanetProvider = ({
   planetName = "jupiter",
   children,
@@ -18,10 +13,23 @@ const PlanetProvider = ({
   const [state, dispatch] = useReducer(PlanetReducer, initialState);
 
   useEffect(() => {
-    // TODO: crear servicio fetch para obtener planeta
-    dispatch({ type: PlanetActions.LOAD_PLANET });
-    const item = data.find((e) => e.name.toLowerCase() === planetName);
-    dispatch({ type: PlanetActions.LOAD_PLANET_SUCCESS, payload: item });
+    (async () => {
+      dispatch({ type: PlanetActions.LOAD_PLANET });
+      const res = await ServicePlanets.get(planetName);
+      const { planet, error } = res;
+      if (error) {
+        dispatch({
+          type: PlanetActions.LOAD_PLANET_ERROR,
+          payload: error,
+        });
+      }
+      if (planet) {
+        dispatch({
+          type: PlanetActions.LOAD_PLANET_SUCCESS,
+          payload: planet,
+        });
+      }
+    })();
   }, [planetName]);
 
   return (
