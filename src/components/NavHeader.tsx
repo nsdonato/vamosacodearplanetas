@@ -6,14 +6,14 @@ import { usePlanet } from "../hooks";
 type NavHeaderProps = ClassProps;
 
 const VARIANTS = {
-  mercury: "border-teal",
-  venus: "border-orange-light",
-  earth: "border-violet",
-  mars: "border-red-light",
-  jupiter: "border-red",
-  saturn: "border-orange-dark",
-  uranus: "border-green-light",
-  neptune: "border-blue",
+  mercury: "border-mercury",
+  venus: "border-venus",
+  earth: "border-earth",
+  mars: "border-mars",
+  jupiter: "border-jupiter",
+  saturn: "border-saturn",
+  uranus: "border-uranus",
+  neptune: "border-neptune",
 };
 
 export const NavHeader = ({ className = "" }: NavHeaderProps) => {
