@@ -4,7 +4,7 @@ import { Layout } from "../components/Layout";
 export const AppRouter = () => {
   return (
     <>
-      <Route path="/planets/:planetName">
+      <Route path="/planets/:planetName/:characteristicName">
         <Layout />
       </Route>
     </>

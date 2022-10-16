@@ -1,16 +1,15 @@
 import { useEffect } from "react";
-import { useLocation, useRoute } from "wouter";
+import { useRoute } from "wouter";
 import { PlanetProvider } from "./context/PlanetProvider";
 import { AppRouter } from "./routers/AppRouter.routing";
+import { isValidPathCharacteristic } from "./helpers/validPathCharacteristic";
 
 function App() {
-  const [match, params] = useRoute("/planets/:planetName");
+  const [match, params] = useRoute("/planets/:planetName/:characteristicName");
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [location, setLocation] = useLocation();
   useEffect(() => {
-    if (!match) {
-      setLocation("/planets/jupiter");
+    if (!match || !isValidPathCharacteristic(params)) {
+      window.location.href = "/planets/jupiter/overview";
     }
   }, []);
   return (
