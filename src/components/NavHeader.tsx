@@ -5,23 +5,8 @@ import { usePlanet } from "../hooks";
 
 type NavHeaderProps = ClassProps;
 
-const VARIANTS = {
-  mercury: "border-mercury",
-  venus: "border-venus",
-  earth: "border-earth",
-  mars: "border-mars",
-  jupiter: "border-jupiter",
-  saturn: "border-saturn",
-  uranus: "border-uranus",
-  neptune: "border-neptune",
-};
-
 export const NavHeader = ({ className = "" }: NavHeaderProps) => {
   const { planet } = usePlanet();
-
-  function getPlanetColor(planet: any) {
-    return VARIANTS[planet as keyof typeof VARIANTS];
-  }
 
   return (
     <>
@@ -30,16 +15,18 @@ export const NavHeader = ({ className = "" }: NavHeaderProps) => {
           <ul className="flex">
             {planets.map((p: MenuPlanetItem) => {
               return (
-                <li key={p.name}>
-                  <Link
-                    href={`/planets/${p.name}`}
-                    className={`${
-                      p.name === planet.name.toLowerCase()
-                        ? `border-t-4 ${getPlanetColor(p.name)}`
-                        : ""
-                    }  lg:pt-10  lg:px-4 p-5 items-center justify-between uppercase text-white font-spartan font-bold text-11 leading-25 tracking-1.36`}
-                  >
-                    {p.name}
+                <li
+                  key={p.name}
+                  className={`${
+                    p.name === planet.name.toLowerCase()
+                      ? `border-t-4 border-${p.name} md:pt-1 lg:pt-[29px]`
+                      : "md:pt-2 lg:pt-[33px]"
+                  } mx-4 first:ml-0 last:mr-0 font-spartan font-bold leading-25 tracking-1 lg:pb-[7px]`}
+                >
+                  <Link href={`/planets/${p.name}/overview`}>
+                    <h4 className="text-11 text-white/75 uppercase hover:text-white cursor-pointer">
+                      {p.name}
+                    </h4>
                   </Link>
                 </li>
               );
