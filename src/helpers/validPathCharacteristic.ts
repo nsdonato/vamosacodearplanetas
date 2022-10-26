@@ -8,10 +8,8 @@ export const isValidPathCharacteristic = (path: ParamsProps): boolean => {
     "internal-structure",
     "surface-geology",
   ];
-  if (path) {
-    return Object.values(listCharacteristics).includes(
-      path?.characteristicName
-    );
-  }
-  return true;
+  
+  return path
+    ? Object.values(listCharacteristics).includes(path?.characteristicName)
+    : true;
 };
