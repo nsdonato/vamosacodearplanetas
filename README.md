@@ -2,11 +2,6 @@
 
 👋🏻 Bienvenidx al Proyecto de [FrontEnd-Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f) desarrollada por la comunidad de Discord de [👩🏻‍💻 vamoacodear 👩🏻‍💻](https://www.twitch.tv/vamoacodear)!
 
-<div>
-  <img src="https://pbs.twimg.com/media/Fac59QLaAAItkK7?format=jpg&name=large" height="300" />
-</div>
-
-
 # Descripción
 
 En este reto, construiremos un sitio de datos de 8 páginas para todos los planetas de nuestro sistema solar. 🎨 Lucirá muy bien en tu portfolio.
