@@ -17,7 +17,7 @@ export const NavBarButtons = ({ className, hiddenMenu }: NavButtonsProps) => (
           <Fragment key={p.name}>
             <li onClick={hiddenMenu} className="hover:bg-darkGray/20">
               <Link
-                href={`/planets/${p.name}`}
+                href={`/planets/${p.name}/overview`}
                 className="w-full py-5 flex items-center uppercase justify-between"
               >
                 <div className="flex items-center">
