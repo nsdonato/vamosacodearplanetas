@@ -1,13 +1,16 @@
 import { MenuPlanets } from ".";
 import { usePlanet } from "../hooks";
+import { LoadingPlanet } from "./LoadingPlanet";
 import { PlanetMain } from "./PlanetMain";
 
 export const Layout = () => {
-  const { planet } = usePlanet();
-  return (
+  const { isLoad } = usePlanet();
+  return !isLoad ? (
     <>
       <MenuPlanets />
-      {planet && <PlanetMain />}
+      <PlanetMain />
     </>
+  ) : (
+    <LoadingPlanet />
   );
 };
