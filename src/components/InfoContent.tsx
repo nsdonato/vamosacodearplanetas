@@ -11,7 +11,7 @@ export const InfoContent = ({
   namePlanet,
 }: InfoContentProps) => {
   return (
-    <div className="px-6 flex flex-col md:col-span-7 justify-center items-center md:items-start md:py-8 md:px-4 lg:col-span-12 lg:p-0 lg:justify-end">
+    <div className="px-6 flex flex-col md:col-span-7 justify-center items-center md:items-start md:py-8 md:px-4 lg:col-span-10 lg:p-0 lg:justify-end">
       <h1 className="font-antonio font-medium text-40 leading-normal tracking-0 uppercase text-white md:text-48 lg:text-80">
         {namePlanet}
       </h1>
