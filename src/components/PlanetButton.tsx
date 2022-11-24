@@ -14,7 +14,7 @@ export const PlanetButton = ({
   dataButtons,
   characteristicName,
 }: PlanetButtonProps) => (
-  <div className="hidden px-6 md:flex md:col-span-5 md:px-0 md:flex-col md:justify-center md:gap-4 md:items-center lg:col-span-12 lg:justify-start lg:mt-10">
+  <div className="hidden px-6 md:flex md:col-span-5 md:px-0 md:flex-col md:justify-center md:gap-4 md:items-start lg:col-span-12 lg:justify-start lg:mt-10">
     {Object.keys(dataButtons).map((title, index) => {
       return (
         <Button
