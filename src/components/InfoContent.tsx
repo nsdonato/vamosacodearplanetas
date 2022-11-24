@@ -1,4 +1,5 @@
 import { ContentPlanet } from "@planet/types";
+import { ImageIcon } from "./";
 
 interface InfoContentProps {
   dataCharacteristic: ContentPlanet;
@@ -27,7 +28,11 @@ export const InfoContent = ({
         >
           Wikipedia
         </a>
-        <img src="/icon-source.svg" className="ml-1 w-3 h-3" alt="source" />
+        <ImageIcon
+          src="/assets/icon-source.svg"
+          className="ml-1 w-3 h-3"
+          altImage="source"
+        />
       </span>
     </div>
   );

@@ -65,7 +65,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        stars: "url('/background-stars.svg')",
+        stars: "url('/assets/background-stars.svg')",
       },
       screens: {
         sm: "375px",

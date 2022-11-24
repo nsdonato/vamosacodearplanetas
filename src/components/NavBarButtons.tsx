@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Link } from "wouter";
-import { ImageIcon, Line } from "../components";
+import { ImageIcon, Line } from "./";
 import { MenuPlanetItem } from "@planet/components";
 import { planets } from "../models";
 
@@ -22,7 +22,7 @@ export const NavBarButtons = ({ className, hiddenMenu }: NavButtonsProps) => (
               >
                 <div className="flex items-center">
                   <ImageIcon
-                    src={`/oval-${p.name}.svg`}
+                    src={`/assets/oval-${p.name}.svg`}
                     className="h-5 w-5 rounded-full mr-6"
                     altImage={p.name}
                   />
@@ -31,7 +31,7 @@ export const NavBarButtons = ({ className, hiddenMenu }: NavButtonsProps) => (
                   </h4>
                 </div>
                 <ImageIcon
-                  src="/arrow-right.svg"
+                  src="/assets/arrow-right.svg"
                   className="h-3 w-3"
                   altImage="arrow-menu"
                 />
