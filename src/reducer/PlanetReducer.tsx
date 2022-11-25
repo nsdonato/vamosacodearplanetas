@@ -8,7 +8,7 @@ import { PlanetActions } from "../actions/PlanetActions";
 
 const initialState = {
   planet: undefined,
-  isLoad: false,
+  isLoad: true,
   isError: false,
   errorMessage: "",
 };
