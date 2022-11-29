@@ -12,7 +12,8 @@
     "prepare": "husky install",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "test:nowatch": "vitest run"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -53,8 +54,7 @@
   "lint-staged": {
     "*.(js|jsx|ts|tsx)": [
       "npm run lint:fix",
-      "npm run format",
-      "npm run test"
+      "npm run format"
     ]
   }
 }
