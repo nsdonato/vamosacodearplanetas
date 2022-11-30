@@ -6,7 +6,7 @@ import { planets } from "../models";
 
 interface NavButtonsProps {
   className: string;
-  hiddenMenu: () => void;
+  hiddenMenu?: () => void;
 }
 
 export const NavBarButtons = ({ className, hiddenMenu }: NavButtonsProps) => (

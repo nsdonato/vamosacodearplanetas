@@ -1,8 +1,8 @@
-import { useMenu } from "../hooks";
+import { usePlanet } from "../hooks";
 import { NavBarButtons, NavHeader, Line, ImageIcon } from "./";
 
 export const MenuPlanets = () => {
-  const { showMenu, toggleMenu, hiddenMenu } = useMenu();
+  const { showMenu, toggleMenu, hiddenMenu } = usePlanet();
 
   return (
     <section>
