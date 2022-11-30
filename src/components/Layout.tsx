@@ -4,11 +4,11 @@ import { LoadingPlanet } from "./LoadingPlanet";
 import { PlanetMain } from "./PlanetMain";
 
 export const Layout = () => {
-  const { isLoad } = usePlanet();
+  const { isLoad, showMenu } = usePlanet();
   return !isLoad ? (
     <>
       <MenuPlanets />
-      <PlanetMain />
+      {!showMenu && <PlanetMain />}
     </>
   ) : (
     <LoadingPlanet />

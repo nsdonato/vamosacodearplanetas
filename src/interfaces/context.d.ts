@@ -2,8 +2,11 @@ declare module "@planet/context" {
   export interface PlanetContextProps {
     planet: Planet | undefined;
     isLoad: boolean;
+    showMenu: boolean;
     isError: boolean;
     errorMessage: string;
+    toggleMenu?: () => void;
+    hiddenMenu?: () => void;
   }
 
   interface PlanetProviderProps {

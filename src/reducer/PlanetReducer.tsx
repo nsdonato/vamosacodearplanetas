@@ -11,9 +11,24 @@ const initialState = {
   isLoad: true,
   isError: false,
   errorMessage: "",
+  showMenu: false,
 };
 
 const handlers: PlanetHandlers = {};
+
+const handleToggleMenu: PlanetActionHandle = (state, action) => {
+  return {
+    ...state,
+    showMenu: !state.showMenu,
+  };
+};
+
+const handleHiddenMenu: PlanetActionHandle = (state, action) => {
+  return {
+    ...state,
+    showMenu: false,
+  };
+};
 
 const handleLoadPlanet: PlanetActionHandle = (state, action) => {
   return {
@@ -42,6 +57,8 @@ const handlePlanetError: PlanetActionHandle = (state, action) => {
 handlers[PlanetActions.LOAD_PLANET] = handleLoadPlanet;
 handlers[PlanetActions.LOAD_PLANET_SUCCESS] = handlePlanetSuccess;
 handlers[PlanetActions.LOAD_PLANET_ERROR] = handlePlanetError;
+handlers[PlanetActions.TOGGLE_MENU] = handleToggleMenu;
+handlers[PlanetActions.HIDDEN_MENU] = handleHiddenMenu;
 
 function reducerFactory(
   initialState: PlanetContextProps,

@@ -12,6 +12,9 @@ const PlanetProvider = ({
   // TODO: Opcional agregar localStorage para cachear los fetch
   const [state, dispatch] = useReducer(PlanetReducer, initialState);
 
+  const toggleMenu = () => dispatch({ type: PlanetActions.TOGGLE_MENU });
+  const hiddenMenu = () => dispatch({ type: PlanetActions.HIDDEN_MENU });
+
   useEffect(() => {
     (async () => {
       dispatch({ type: PlanetActions.LOAD_PLANET });
@@ -33,7 +36,7 @@ const PlanetProvider = ({
   }, [planetName]);
 
   return (
-    <PlanetContext.Provider value={{ ...state }}>
+    <PlanetContext.Provider value={{ ...state, toggleMenu, hiddenMenu }}>
       {children}
     </PlanetContext.Provider>
   );
