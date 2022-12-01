@@ -57,28 +57,8 @@ jobs:
         with:
           name: dist
           path: dist
-  testing:
-      needs: [lint, build]
-      runs-on: ubuntu-latest
-      name: 🧐 Testing
-      steps:
-        - uses: actions/checkout@v2
-          with:
-            fetch-depth: 0
-        - uses: actions/setup-node@v2
-          with:
-            node-version: 16
-            registry-url: 'https://registry.npmjs.org'
-        - name: Install dependencies
-          run: npm ci
-        - uses: actions/download-artifact@v2
-          with:
-            name: dist
-            path: dist
-        - name: 🧐 Unit testing
-          run: npm run test
   deploy:
-    needs: [testing]
+    needs: [build]
     runs-on: ubuntu-latest
     name: 🚀 Vercel Production Deployment
     env:
@@ -94,3 +74,23 @@ jobs:
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+  # testing:
+  #   needs: [lint, build]
+  #   runs-on: ubuntu-latest
+  #   name: 🧐 Testing
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         fetch-depth: 0
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: 16
+  #         registry-url: 'https://registry.npmjs.org'
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - uses: actions/download-artifact@v2
+  #       with:
+  #         name: dist
+  #         path: dist
+  #     - name: 🧐 Unit testing
+  #       run: npm run test
