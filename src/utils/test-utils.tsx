@@ -1,6 +1,6 @@
 /* eslint-disable import/export */
 import { cleanup, render } from "@testing-library/react";
-import { afterEach } from "vitest";
+import { afterEach, vi } from "vitest";
 
 afterEach(() => {
   cleanup();
@@ -17,3 +17,4 @@ export * from "@testing-library/react";
 export { default as userEvent } from "@testing-library/user-event";
 // Sobreescribimos el export de render.
 export { customRender as render };
+export { vi };
