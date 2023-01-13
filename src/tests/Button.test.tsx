@@ -18,11 +18,12 @@ describe("Button", () => {
       />
     );
 
-    expect(
-      screen.getByRole("button", {
-        name: /01 overview/i,
-      })
-    ).toBeInTheDocument();
+    const firstButton = screen.getByRole("button", {
+      name: /01 overview/i,
+    });
+
+    expect(firstButton).toBeInTheDocument();
+    expect(firstButton).toHaveClass(`bg-${planetName}`);
 
     rerender(
       <Button
