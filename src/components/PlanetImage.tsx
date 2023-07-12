@@ -7,6 +7,7 @@ export const PlanetImage = () => {
   const name = planet?.name;
   const planetImages = planet?.images;
   const planetGeologyImages = planetImages?.geology;
+
   const dataImages = {
     overview: planetImages?.planet,
     "internal-structure": planetImages?.internal,
