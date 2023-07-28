@@ -1,6 +1,6 @@
 import { Planet } from "@planet/types";
 
-const URL = "https://api-planets.onrender.com/api/planet";
+const URL = "https://planetas-api.onrender.com/api/planet";
 
 interface Response {
   planet?: Planet;
